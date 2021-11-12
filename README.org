@@ -2,8 +2,7 @@
 #+author: Kevin Ward
 
 #+html: <p align="center"><img src="misc/splash/smaller-cute-demon.png" width=200 height=200/></p>
-#+html: <p align="center"><a href="https://www.gnu.org/software/emacs/emacs.html#Releases"><img src="https://img.shields.io/badge/Emacs-27.1%20%E2%80%93%2028.0.60-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white"></a></p>
-#+html: <p align="center"><a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-literate%20config-%2377aa99?style=flat-square&logo=org&logoColor=white"></a></p>
+#+html: <p align="center"><a href="https://www.gnu.org/software/emacs/emacs.html#Releases"><img src="https://img.shields.io/badge/Emacs-27.1%20%E2%80%93%2028.0.60-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white"></a> <a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-literate%20config-%2377aa99?style=flat-square&logo=org&logoColor=white"></a></p>
 
 -----
 This repository holds the configuration files that I use for [[https://github.com/hlissner/doom-emacs][Doom Emacs]].
@@ -11,7 +10,7 @@ This repository holds the configuration files that I use for [[https://github.co
 I am using a partial literate configuration. At the moment the main configuration file is tangled from a single org-document, but there are other files that are pure emacs-lisp rather than literate org-mode files.
 
 This particular Doom configuration is for my main Linux distro that at the moment is the Manjaro Sway Community Edition.
------
+
 
 ** Main Files
 + ~config.org~
@@ -44,11 +43,12 @@ This particular Doom configuration is for my main Linux distro that at the momen
   - Doom Emacs is set up to create this file in your configuration directory
   - It's only created if the user makes any changes via the ~customize~ interface
   - In my case I used ~custom-set-faces~ instead of ~setq~ in my config a couple of times
-
+@@html:<br>@@
 + Other resources such as images are put in the ~misc~ subfolder
-
+@@html:<br>@@
 -----
 
-*** The end result
+*** Here is a screenshot of the my Doom Emacs dashboard
+  ↓                                               ↓                                                                 ↓
 
 [[file:misc/screenshots/doom-dashboard.png]]
