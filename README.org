@@ -1,0 +1,32 @@
+#+title: README
+#+author: Kevin Ward
+
+* Emacs Config
+-----
++ This repository holds the configuration files that I use for Doom Emacs
++ I am using a partial literate configuration. At the moment the main config file is tangled from a single org-document, but there are other files that are elisp rather than literate org-mode files.
++ This particular Doom configuration is for my main Linux distro that at the moment is the Manjaro Sway Community Edition
+  -----
+** Files
+1) config.org
+   - An org-mode file written in org markup that has blocks of elisp code embedded within it.
+   - This is the main configuration file that when tangled exports out to the config.el file.
+2) config.el
+   - This is the elisp configuration file that is created from config.org.
+   - This is the file that you would normally edit directly to configure Doom Emacs.
+3) init.el
+   - This file comes preconfigured specific to Doom Emacs.
+   - Generally speaking this is where you can toggle different packages on and off, or modify them by adding in-built, to Doom, flags to packages.
+4) packages.el
+   - Speaking of packages this is the file where I can control the installation of other packages that are not included in Doom Emacs.
+   - I can also use this to make some changes to Doom Emacs packages, such as preventing them from being installed or pinning them to specific versions.
+5) abbrev.el
+   - This is basically a huge list of commonly misspelled English words that is useb by the ~abbrev~ package to automatically correct my mistakes.
+   - I also occasionally add some things that I commonly type out so that I can autoexpand things.
+     - For example:
+       ~pkg~ + ~space~ will autoexpand to ~(package!~ just because I found that to be convenient
+6) bindings.el
+   - I decided to create a separate file for my personal custom keybinds
+7) custom.el
+   - Doom Emacs is set up to create this file in your configuration directory if the user makes any changes via the ~customize~ interface
+   - In my case I used ~custom-set-faces~ instead of ~setq~ in a couple of places and that was enough to spawn the custom file
