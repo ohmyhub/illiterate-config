@@ -1,35 +1,39 @@
 #+title: Doom Emacs Configuration
 #+author: Kevin Ward
 
+#+html: <p align="center"><img src="misc/splash/smaller-cute-demon.png" width=150 height=150/></p>
 #+html: <a href="https://www.gnu.org/software/emacs/emacs.html#Releases"><img src="https://img.shields.io/badge/Emacs-27.1%20%E2%80%93%2028.0.60-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white"></a>
 #+html: <a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-literate%20config-%2377aa99?style=flat-square&logo=org&logoColor=white"></a>
 
-** This repository holds the configuration files that I use for Doom Emacs
+-----
+This repository holds the configuration files that I use for [[https://github.com/hlissner/doom-emacs][Doom Emacs]].
 
-** I am using a partial literate configuration. At the moment the main config file is tangled from a single org-document, but there are other files that are elisp rather than literate org-mode files.
+I am using a partial literate configuration. At the moment the main configuration file is tangled from a single org-document, but there are other files that are pure emacs-lisp rather than literate org-mode files.
 
-** This particular Doom configuration is for my main Linux distro that at the moment is the Manjaro Sway Community Edition
+This particular Doom configuration is for my main Linux distro that at the moment is the Manjaro Sway Community Edition.
+-----
 
 ** Main Files
 1) ~config.org~
-   - An org-mode file written in org markup that has blocks of elisp code embedded within it.
-   - This is the main configuration file that when tangled exports out to the config.el file.
+   - An org-mode file written in org markup that has blocks of emacs-lisp code embedded within it
+   - This is the main configuration file that when tangled exports out to the ~config.el~ file
 
 2) ~config.el~
-   - This is the elisp configuration file that is created from config.org.
-   - This is the file that you would normally edit directly to configure Doom Emacs.
+   - This is the emacs-lisp configuration file that is created from ~config.org~
+   - This is the file that you would normally edit directly to configure Doom Emacs
 
 3) ~init.el~
-   - This file comes preconfigured specific to Doom Emacs.
-   - Generally speaking this is where you can toggle different packages on and off, or modify them by adding in-built, to Doom, flags to packages.
+   - This file comes pre-configured specific to Doom Emacs
+   - Generally speaking this is where you can toggle different Doom packages on and off
 
 4) ~packages.el~
-   - Speaking of packages this is the file where I can control the installation of other packages that are not included in Doom Emacs.
-   - I can also use this to make some changes to Doom Emacs packages, such as preventing them from being installed or pinning them to specific versions.
+   - The file where I can control the installation of other packages that are not included in Doom Emacs
+   - You can also pin Doom packages to specific versions
 
 5) ~abbrev.el~
-   - This is basically a huge list of commonly misspelled English words that is useb by the ~abbrev~ package to automatically correct my mistakes.
-   - I also occasionally add some things that I commonly type out so that I can autoexpand things.
+   - This is basically a huge list of commonly misspelled English words
+   - It is used by the ~abbrev~ package to automatically correct my mistakes
+   - I added some things that I commonly type out so abbrev will autoexpand them
    - For example:
      ~pkg~ + ~space~ will autoexpand to ~(package!~ just because I found that to be convenient
 
@@ -37,12 +41,12 @@
    - I decided to create a separate file for my personal custom keybinds
 
 7) ~custom.el~
-   - Doom Emacs is set up to create this file in your configuration directory if the user makes any changes via the ~customize~ interface
-   - In my case I used ~custom-set-faces~ instead of ~setq~ in a couple of places and that was enough to spawn the custom file
+   - Doom Emacs is set up to create this file in your configuration directory
+   - It's only created if the user makes any changes via the ~customize~ interface
+   - In my case I used ~custom-set-faces~ instead of ~setq~ in my config a couple of times
 
-** misc Subdirectory
-+ Resources such as the image shown below are put in this folder
+8) Other resources such as images are put in the ~misc~ subfolder.
 
-** All of this ends up creating something that looks like this:
+*** The end result
 
 [[file:misc/screenshots/doom-dashboard.png]]
