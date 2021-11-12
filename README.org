@@ -1,9 +1,9 @@
 #+title: Doom Emacs Configuration
 #+author: Kevin Ward
 
-#+html: <p align="center"><img src="misc/splash/smaller-cute-demon.png" width=150 height=150/></p>
-#+html: <a href="https://www.gnu.org/software/emacs/emacs.html#Releases"><img src="https://img.shields.io/badge/Emacs-27.1%20%E2%80%93%2028.0.60-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white"></a>
-#+html: <a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-literate%20config-%2377aa99?style=flat-square&logo=org&logoColor=white"></a>
+#+html: <p align="center"><img src="misc/splash/smaller-cute-demon.png" width=200 height=200/></p>
+#+html: <p align="center"><a href="https://www.gnu.org/software/emacs/emacs.html#Releases"><img src="https://img.shields.io/badge/Emacs-27.1%20%E2%80%93%2028.0.60-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white"></a></p>
+#+html: <p align="center"><a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-literate%20config-%2377aa99?style=flat-square&logo=org&logoColor=white"></a></p>
 
 -----
 This repository holds the configuration files that I use for [[https://github.com/hlissner/doom-emacs][Doom Emacs]].
@@ -14,38 +14,40 @@ This particular Doom configuration is for my main Linux distro that at the momen
 -----
 
 ** Main Files
-1) ~config.org~
-   - An org-mode file written in org markup that has blocks of emacs-lisp code embedded within it
-   - This is the main configuration file that when tangled exports out to the ~config.el~ file
++ ~config.org~
+  - An org-mode file written in org markup that has blocks of emacs-lisp code embedded within it
+  - This is the main configuration file that when tangled exports out to the ~config.el~ file
 
-2) ~config.el~
-   - This is the emacs-lisp configuration file that is created from ~config.org~
-   - This is the file that you would normally edit directly to configure Doom Emacs
++ ~config.el~
+  - This is the emacs-lisp configuration file that is created from ~config.org~
+  - This is the file that you would normally edit directly to configure Doom Emacs
 
-3) ~init.el~
-   - This file comes pre-configured specific to Doom Emacs
-   - Generally speaking this is where you can toggle different Doom packages on and off
++ ~init.el~
+  - This file comes pre-configured specific to Doom Emacs
+  - Generally speaking this is where you can toggle different Doom packages on and off
 
-4) ~packages.el~
-   - The file where I can control the installation of other packages that are not included in Doom Emacs
-   - You can also pin Doom packages to specific versions
++ ~packages.el~
+  - The file where I can control the installation of other packages that are not included in Doom Emacs
+  - You can also pin Doom packages to specific versions
 
-5) ~abbrev.el~
-   - This is basically a huge list of commonly misspelled English words
-   - It is used by the ~abbrev~ package to automatically correct my mistakes
-   - I added some things that I commonly type out so abbrev will autoexpand them
-   - For example:
-     ~pkg~ + ~space~ will autoexpand to ~(package!~ just because I found that to be convenient
++ ~abbrev.el~
+  - This is basically a huge list of commonly misspelled English words
+  - It is used by the ~abbrev~ package to automatically correct my mistakes
+  - I added some things that I commonly type out so abbrev will autoexpand them
+  - For example:
+    ~pkg~ + ~space~ will autoexpand to ~(package!~ just because I found that to be convenient
 
-6) ~bindings.el~
-   - I decided to create a separate file for my personal custom keybinds
++ ~bindings.el~
+  - I decided to create a separate file for my personal custom keybinds
 
-7) ~custom.el~
-   - Doom Emacs is set up to create this file in your configuration directory
-   - It's only created if the user makes any changes via the ~customize~ interface
-   - In my case I used ~custom-set-faces~ instead of ~setq~ in my config a couple of times
++ ~custom.el~
+  - Doom Emacs is set up to create this file in your configuration directory
+  - It's only created if the user makes any changes via the ~customize~ interface
+  - In my case I used ~custom-set-faces~ instead of ~setq~ in my config a couple of times
 
-8) Other resources such as images are put in the ~misc~ subfolder.
++ Other resources such as images are put in the ~misc~ subfolder
+
+-----
 
 *** The end result
 
