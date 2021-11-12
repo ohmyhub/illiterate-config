@@ -1,16 +1,13 @@
-#+title: Doom Emacs Configuration
-#+author: Kevin Ward
-
 #+html: <p align="center"><img src="misc/splash/smaller-cute-demon.png" width=200 height=200/></p>
 #+html: <p align="center"><a href="https://www.gnu.org/software/emacs/emacs.html#Releases"><img src="https://img.shields.io/badge/Emacs-27.1%20%E2%80%93%2028.0.60-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white"></a> <a href="https://orgmode.org"><img src="https://img.shields.io/badge/Org-literate%20config-%2377aa99?style=flat-square&logo=org&logoColor=white"></a></p>
 
------
+* Doom Emacs Configuration
+
 This repository holds the configuration files that I use for [[https://github.com/hlissner/doom-emacs][Doom Emacs]].
 
 I am using a partial literate configuration. At the moment the main configuration file is tangled from a single org-document, but there are other files that are pure emacs-lisp rather than literate org-mode files.
 
-This particular Doom configuration is for my main Linux distro that at the moment is the Manjaro Sway Community Edition.
-
+I'm using this Doom configuration for my main Linux distro which is Manjaro Sway right now.
 
 ** Main Files
 + ~config.org~
@@ -48,7 +45,8 @@ This particular Doom configuration is for my main Linux distro that at the momen
 @@html:<br>@@
 -----
 
-*** Here is a screenshot of the my Doom Emacs dashboard
-  ↓                                               ↓                                                                 ↓
-
-[[file:misc/screenshots/doom-dashboard.png]]
+#+name: fig: Doom Dashboard
+#+caption: Screenshot of my Doom dashboard
+#+attr_org: :width 800
+#+attr_html: :scale 0.33
+[[file:misc/screenshots/doom-dashboard.png][Doom Dashboard Screenshot]]
