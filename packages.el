@@ -7,9 +7,10 @@
 (package! mixed-pitch)
 (package! org-appear
   :recipe (:host github :repo "awth13/org-appear"))
+(package! org-real)
+
 
 ;; childframes
-(package! mini-frame)
 (package! vertico-posframe)
 
 ;; tree sitter syntax support
