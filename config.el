@@ -186,6 +186,9 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
     (add-hook (intern (concat (symbol-name hook) "-hook")) #'mixed-pitch-mode)))
 (add-hook 'doom-init-ui-hook #'init-mixed-pitch-h)
 
+;; gravatars in my commits
+(setq magit-revision-show-gravatars '("^Author:     " . "^Commit:     "))
+
 ;; fancy start up buffer splash image
 (setq fancy-splash-image "~/Pictures/smaller-cute-demon.png")
 

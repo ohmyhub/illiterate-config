@@ -18,17 +18,14 @@ From time to time I'll do some actually coding in it but generally speaking I'm 
 What you are about to witness is a perpetual work in progress. It won't be pretty, but it might be interesting.
 
 ** The Basics
------
 *** Step One
 + Make this file run (slightly) faster with lexical binding (see [[https://nullprogram.com/blog/2016/12/22/][this blog post]] for more info).
-
 #+begin_src emacs-lisp :tangle yes
 ;;; config.el -*- lexical-binding: t; -*-
 #+end_src
 
 *** Personal Information
 + Who am I?
-
 #+begin_src emacs-lisp :tangle yes
 ;; user info
 (setq user-full-name "Kevin Ward"
@@ -38,24 +35,20 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 + This is used by GPG and all sorts of other things.
 
 ** Quality of Life Improvements
------
 *** Better Defaults
 + Where is my org directory located? This is a little out of place but it needs to be set before org loads.
-
 #+begin_src emacs-lisp :tangle yes
 ;; where the org at?
 (setq org-directory "~/Dropbox/Org/")
 #+end_src
 
 + I don't really need line numbers.
-
 #+begin_src emacs-lisp :tangle yes
 ;; I don't care about line numbers
 (setq display-line-numbers-type nil)
 #+end_src
 
 + It's the little things that make a house a home. Or a text editor a home.
-
 #+begin_src emacs-lisp :tangle yes
 ;; better defaults
 (setq-default
@@ -66,21 +59,18 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + Just mash those buttons to escape.
-
 #+begin_src emacs-lisp :tangle yes
 ;; mash jk without thinking
 (setq evil-escape-unordered-key-sequence t)
 #+end_src
 
 + You can't tell me where to go Emacs. I'll go past the end of the line if I want to. Also, when I leave insert mode don't move my cursor. Just leave it where it is.
-
 #+begin_src emacs-lisp :tangle yes
 (setq evil-move-beyond-eol t)           ; let me go where I want to go!
 (setq evil-move-cursor-back nil)        ; don't move my cursor around!
 #+end_src
 
 + If I didn't have undo I don't know what I'd do.
-
 #+begin_src emacs-lisp :tangle yes
 ;; more better defaults
 (setq undo-limit 80000000                         ; Raise undo-limit to 80Mb
@@ -92,14 +82,12 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + What time is it?
-
 #+begin_src emacs-lisp :tangle yes
 ;; what time is it?
 (display-time-mode 1)
 #+end_src
 
 + Without ~which-key~ I'd still be stuck in that first scratch buffer. It can get a little clogged with the word /evil/ when you use /evil-mode/ so let's filter that stuff out.
-
 #+begin_src emacs-lisp :tangle yes
 ;; which key? this one.
 (setq which-key-idle-delay 0.05)
@@ -113,7 +101,6 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + A tweak to get ~which-key~ dispatch working.
-
 #+begin_src emacs-lisp :tangle yes
 ;; tell which-key to behave
 (setq which-key-use-C-h-commands t
@@ -129,14 +116,12 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + The ~avy~ package is incredibly useful for getting around a buffer. I don't want it to limit itself to the current buffer or window only.
-
 #+begin_src emacs-lisp :tangle yes
 ;; all of them!
 (setq avy-all-windows t)
 #+end_src
 
 + When I'm slicing and dicing windows I want them to default to splitting to the right or to the bottom of the frame. Also, ask me what buffer to use in the newly created window.
-
 #+begin_src emacs-lisp :tangle yes
 ;; do the splits
 (setq evil-vsplit-window-right t
@@ -148,7 +133,6 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + I used to rely on the ~deft~ package to create and manage org-mode files. While it isn't as integral anymore I still use it for some things.
-
 #+begin_src emacs-lisp :tangle yes
 ;; deft config
 (use-package! deft
@@ -168,7 +152,6 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + Shit, I don't even remember what this does. I had some problem with a new workspace being created every time I reopened an Emacs server with emacsclient.
-
 #+begin_src emacs-lisp :tangle yes
 ;; whips persp-mode into shape
 (after! persp-mode
@@ -176,7 +159,6 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + Okay, this one I /really/ don't remember.
-
 #+begin_src emacs-lisp :tangle yes
 ;; what the fuck does this do? I'll leave it alone for now
 (setq tab-bar-format '(tab-bar-format-global)
@@ -191,14 +173,12 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + Prompt me for completion harder daddy.
-
 #+begin_src emacs-lisp :tangle yes
 ;; I like prompt prompts
 (setq company-idle-delay 0.01)
 #+end_src
 
 + This fixes an issue with vterm and native-compilation.
-
 #+begin_src emacs-lisp :tangle yes
 ;; supposedly this helps native-comp and vterm play well together
 (setq vterm-always-compile-module t)
@@ -206,7 +186,6 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 
 *** Helpful Functions
 + Evaluate configuration and reload fonts.
-
 #+begin_src emacs-lisp :tangle yes
 ;; a function to see my font tweaks quickly
 (defun evig ()
@@ -217,7 +196,6 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + I have an org document for each project I'm working on. When I take meeting notes I'll enter the meeting as a new heading. This little guy, in combination with a keybind, spits out the date formatted the way I like it.
-
 #+begin_src emacs-lisp :tangle yes
 ;; what day is it?
 (defun today ()
@@ -227,7 +205,6 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + This bad boy selects the entire line and places your cursor at the end of it. I didn't know that there was an existing function for that at the time. I'll keep this around for now.
-
 #+begin_src emacs-lisp :tangle yes
 ;; this is terrible
 (defun select-line ()
@@ -238,7 +215,6 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + A handy function I stole from @tecosaur to create a new org-mode buffer.
-
 #+begin_src emacs-lisp :tangle yes
 ;; create new empty org-mode buffer
 (evil-define-command evil-buffer-org-new (count file)
@@ -255,7 +231,6 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + I want to tangle this configuration file when I save it.
-
 #+begin_src emacs-lisp :tangle yes
 ;; tangle literate config on save
 (defun org-babel-tangle-config ()
@@ -270,7 +245,6 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + Let's load my custom keybindings that I put in separate file for reasons I no longer remember. Oh, and my ~abbrev~ definitions that automagically fix many common spelling mistakes.
-
 #+begin_src emacs-lisp :tangle yes
 ;; keybinds
 (load! "bindings")
@@ -280,7 +254,6 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 ** Lookin' Good
------
 *** Theme
 + Everything solarized. Yes, even that.
 #+begin_src emacs-lisp :tangle yes
@@ -289,14 +262,12 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + A small change so that the highlight selection isn't the same color as the org-babel background color.
-
 #+begin_src emacs-lisp :tangle yes
 (custom-set-faces! '(region :background "#094959"))
 #+end_src
 
 *** Fonts
 + I enjoy a nice looking font. I'm also a fan of eye candy. So things like ligatures and code glyphs appeal to me. I customized and built my own version of Iosevka recently so that's what I'm using at the moment.
-
 #+begin_src emacs-lisp :tangle yes
 ;; choose your fonts!
 (setq doom-font (font-spec :family "Bespoke Iosevka Mono" :size 20 :weight 'medium)
@@ -306,7 +277,6 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + I like emojis. There, I said it. I am specifying a different font to handle emojis.
-
 #+begin_src emacs-lisp :tangle yes
 ;; emojis
 (use-package emojify
@@ -318,15 +288,13 @@ What you are about to witness is a perpetual work in progress. It won't be prett
   (setq emojify-emoji-styles '(unicode)))
 #+end_src
 
-  + I want to be able to start typing and have a list of emojis pop up in a prompt for completion.
-
++ I want to be able to start typing and have a list of emojis pop up in a prompt for completion.
 #+begin_src emacs-lisp :tangle yes
 ;; emojis in my backend
 (setq company-backends '(company-emoji company-capf))
 #+end_src
 
 + Mixing monospace and variable pitched fonts in org-mode gives you a visually impressive workspace. Once again I am swiping a bit of config from the impressive @tecosaur.
-
 #+begin_src emacs-lisp :tangle yes
 ;; my pitches getting all mixed up
 (defvar mixed-pitch-modes '(org-mode LaTeX-mode markdown-mode gfm-mode Info-mode)
@@ -341,9 +309,14 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 (add-hook 'doom-init-ui-hook #'init-mixed-pitch-h)
 #+end_src
 
++ This will enable gravatars when viewing commits. The service used by default is [[https://www.libravatar.org/][Libravatar]].
+#+begin_src emacs-lisp :tangle yes
+;; gravatars in my commits
+(setq magit-revision-show-gravatars '("^Author:     " . "^Commit:     "))
+#+end_src
+
 *** Doom Dashboard
 + The first thing you see when you fire up Doom Emacs is the Doom Dashboard. I'm using a cute little demon as the splash image. The image was created by [[https://github.com/eccentric-j/doom-icon][@eccentric-j]].
-
 #+begin_src emacs-lisp :tangle yes
 ;; fancy start up buffer splash image
 (setq fancy-splash-image "~/Pictures/smaller-cute-demon.png")
@@ -351,7 +324,6 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 
 *** Modeline
 + Some of the information displayed by default in the modeline is superfluous and so I snip it right out of there.
-
 #+begin_src emacs-lisp :tangle yes
 ;; I don't need to see this
 (defun doom-modeline-conditional-buffer-encoding ()
@@ -363,7 +335,6 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+end_src
 
 + When I see text in red I assume something has gone wrong. The default in Doom is to show a the filename in red when there are unsaved changes. Let's go with a slightly less alarming orange.
-
 #+begin_src emacs-lisp :tangle yes
 ;; red is too aggressive, so let's make it orange
 (custom-set-faces!
@@ -371,7 +342,6 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+end_src
 
 + I've had issues in the past with modeline text or icons being pushed offscreen on the right side of the modeline. This adds some padding to prevent that.
-
 #+begin_src emacs-lisp :tangle yes
 ;; gimme some space!
 (after! doom-modeline
@@ -381,10 +351,8 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+end_src
 
 *** Childframes
-
 **** Vertico
 + I use ~vertico~ and the Doom Emacs affiliated modules/packages as my completion engine. I enjoyed having the option of ~ivy~ in a childframe instead of the minibuffer. This is someone's attempt at using a childframe for ~vertico~ that I'm tinkering with.
-
 #+begin_src emacs-lisp :tangle yes
 ;; children of vertico
 (require 'vertico-posframe)
@@ -398,31 +366,26 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 
 *** Other
 + I'm flying around without having my current line highlighted. For some reason it makes things feel snappier. I don't think that's true but I like it anyway.
-
 #+begin_src emacs-lisp :tangle yes
 ;; I know what line I'm on
 (remove-hook 'doom-first-buffer-hook #'global-hl-line-mode)
 #+end_src
 
 + Where am I? The cursor flashes when I jump around. Doom Emacs has a built-in module called ~nav-flash~ but I like the ~beacon~ package a bit more so that's what I'm using.
-
 #+begin_src emacs-lisp :tangle yes
 ;; this helps if I lose what line I'm on
 (beacon-mode 1)
 #+end_src
 
 ** Org Mode = Best Mode
------
 *** The Boring Stuff
  + Give my headings their space!
-
 #+begin_src emacs-lisp :tangle yes
 ;; stay out of my personal space
 (setq org-cycle-separator-lines -1)
 #+end_src
 
 + Org capture is an amazing tool that let's you add todo items, journal entries, and notes to files on the fly. Capture templates can take you to new heights of efficiency. Which is why I always forget to use them.
-
 #+begin_src emacs-lisp :tangle yes
 ;; I should use org-capture
 (after! org
@@ -439,7 +402,6 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+end_src
 
 + When you make your org-mode priorities fancy Emacs can get a little fussy. So someone smarter than me made a hook to suppress those error messages.
-
 #+begin_src emacs-lisp :tangle yes
 ;; god damn it teco I should really learn more elisp before copying and pasting shit
 (defadvice! shut-up-org-problematic-hooks (orig-fn &rest args)
@@ -448,7 +410,6 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+end_src
 
 + I like nesting headlines and I want LaTeX to respect that when I use it to pummel an org document into a the shape of a pdf.
-
 #+begin_src emacs-lisp :tangle yes
 ;; go deep!
 (setq org-export-headline-levels 5)
@@ -456,7 +417,6 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 
 *** Make It Pretty!
 + I use org-mode to create task lists. Having keywords I can assign to a heading helps with that.
-
 #+begin_src emacs-lisp :tangle yes
 ;; this is a priorities
 (after! org
@@ -477,7 +437,6 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+end_src
 
 + I find these face attributes to be the most pleasing for my org headings.
-
 #+begin_src emacs-lisp :tangle yes
 ;; you got custom on my face
 (custom-set-faces!
@@ -495,14 +454,12 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+end_src
 
  + I did say /make it pretty/ did I not?
-
 #+begin_src emacs-lisp :tangle yes
 ;; so pretty
 (add-hook 'org-mode-hook #'+org-pretty-mode)
 #+end_src
 
 + Who wants normal old bullets for their headings anyway?
-
 #+begin_src emacs-lisp :tangle yes
 ;; you're a superstar!
 (after! org-superstar
@@ -511,7 +468,6 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+end_src
 
 + A couple of things are going on in this next bit. I think the downward facing triangle looks nice than the ellipses for folded org trees. Also, I don't need to see those stars before my pretty bullets. Also the second, it helps to prioritize tasks and it is nice to make those priorities pop visually.
-
 #+begin_src emacs-lisp :tangle yes
 ;; more fancy please
 (setq org-ellipsis " ▾ "
@@ -527,7 +483,6 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+end_src
 
 + I replace a bunch of common org-mode specific words with fancy glyphs or icons. Ripped straight out of @tecosaur config with some minor tweaks of my own.
-
 #+begin_src emacs-lisp :tangle yes
 ;; why use words when have pictures?
 (after! org
@@ -622,21 +577,18 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+end_src
 
 + Oh yea, I still need to hook fancy priorities into org-mode.
-
 #+begin_src emacs-lisp :tangle yes
 ;; More. Fancy.
 (add-hook! org-mode 'org-fancy-priorities-mode)
 #+end_src
 
 + Get out of here stars! Never talk to me or my Unicode bullets again.
-
 #+begin_src emacs-lisp :tangle yes
 ;; get out of my face stars
 (setq org-hide-leading-stars t)
 #+end_src
 
 + Defines a minor mode to allow special forms such as /italics/, *bold*, _underline_ and =literal= to be editable when the cursor is over them, otherwise display the proper value.
-
 #+begin_src emacs-lisp :tangle yes
 ;; you will stay hidden until I summon you
 (use-package! org-appear
@@ -648,19 +600,16 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+end_src
 
 ** You've Got Mail
------
 *** mu4me?
 + Mu4e is an awesome way to manage your email. Or in my case a new and interesting way I /could/ check my email if I remembered to do it.
 
 + Emacs needs you to tell it where mu4e is located sometimes. Not always, but for reasons I can't remember it was necessary in this situation.
-
 #+begin_src emacs-lisp :tangle yes
 ;; where the email client at?
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e")
 #+end_src
 
 + Are you ready for a big blob of  ~(/setq/...)~?
-
 #+begin_src emacs-lisp :tangle yes
 ;; this is how I do the emails
 (after! mu4e
@@ -694,7 +643,6 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 + Setting up mu4e with Gmail requires a fair amount of configuration outside of Emacs. For example, I use the isync package to fetch my email from the remote Gmail server to be indexed and served up locally.
 
 + If you're only syncing Gmail folders you don't need to have mu4e any cleanup after indexing. Also, since Gmail uses labels as folders we can use lazy check since messages don't really "move".
-
 #+begin_src emacs-lisp :tangle yes
 ;; let gmail do it
 (after! mu4e
@@ -703,10 +651,8 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+end_src
 
 ** The Experiments
------
 *** Browser Bookmarks
 + I have several thousand bookmarks that I've collected and tagged with the Raindrop.io service. Buku is a neat command line package that I would like to use instead. Someone made an Emacs package to integrate Buku into this text editor. I'm giving it a try for now.
-
 #+begin_src emacs-lisp :tangle yes
 ;; another place to dump my web browser bookmarks
 (setq ebuku-results-limit 0)
@@ -714,7 +660,6 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 
 *** All Childframes All the Time
 + The ~mini-frame~ package pops things out to a nice looking floating childframe that would have normally been in the minibuffer. I'm playing around with this and ~vertico-posframe~.
-
 #+begin_src emacs-lisp :tangle yes
 ;; some configs for a package I'm not using right now
 (custom-set-variables
@@ -727,10 +672,8 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+end_src
 
 ** What's Computer Programming?
------
 *** Common Lisp
 + I'm trying to learn more about elisp's big brother /common-lisp/.
-
 #+begin_src emacs-lisp :tangle yes
 ;; nothing but a common lisp
 (after! sly
