@@ -666,9 +666,10 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+end_src
 
 *** Colorized Hexcodes
-+ Hexcodes are colorized with the rainbow-mode package.
++ Hexcodes are colorized with the rainbow-mode package. Rainbow-mode is hooked into org-mode and all programming modes.
 #+begin_src emacs-lisp :tangle yes
-(setq rainbow-mode t)
+(add-hook! org-mode 'rainbow-mode)
+(add-hook! prog-mode 'rainbow-mode)
 #+end_src
 
 ** What's Computer Programming?
