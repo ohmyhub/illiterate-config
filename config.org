@@ -185,6 +185,13 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 *** Helpful Functions
++ Open the file that I'm currently writing this in.
+#+begin_src emacs-lisp :tangle yes
+(defun org-open-config-file ()
+  (interactive)
+  (find-file "~/.doom.d/config.org"))
+#+end_src
+
 + Evaluate configuration and reload fonts.
 #+begin_src emacs-lisp :tangle yes
 ;; a function to see my font tweaks quickly
@@ -409,7 +416,7 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
   (ignore-errors (apply orig-fn args)))
 #+end_src
 
-+ I like nesting headlines and I want LaTeX to respect that when I use it to pummel an org document into a the shape of a pdf.
++ I like nesting headlines and I want LaTeX to respect that when I use it to pummel an org document into the shape of a pdf.
 #+begin_src emacs-lisp :tangle yes
 ;; go deep!
 (setq org-export-headline-levels 5)
@@ -658,17 +665,10 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 (setq ebuku-results-limit 0)
 #+end_src
 
-*** All Childframes All the Time
-+ The ~mini-frame~ package pops things out to a nice looking floating childframe that would have normally been in the minibuffer. I'm playing around with this and ~vertico-posframe~.
+*** Colorized Hexcodes
++ Hexcodes are colorized with the rainbow-mode package.
 #+begin_src emacs-lisp :tangle yes
-;; some configs for a package I'm not using right now
-(custom-set-variables
- '(mini-frame-show-parameters
-   '((top . 500)
-     (width . 0.7)
-     (left . 0.5))))
-
-(setq mini-frame-detach-on-hide nil)
+(setq rainbow-mode t)
 #+end_src
 
 ** What's Computer Programming?
