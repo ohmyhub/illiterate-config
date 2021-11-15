@@ -288,6 +288,12 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 (setq doom-theme 'doom-solarized-dark)
 #+end_src
 
++ A small change so that the highlight selection isn't the same color as the org-babel background color.
+
+#+begin_src emacs-lisp :tangle yes
+(custom-set-faces! '(region :background "red"))
+#+end_src
+
 *** Fonts
 + I enjoy a nice looking font. I'm also a fan of eye candy. So things like ligatures and code glyphs appeal to me. I customized and built my own version of Iosevka recently so that's what I'm using at the moment.
 

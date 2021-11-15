@@ -154,6 +154,8 @@
 ;; solarized me
 (setq doom-theme 'doom-solarized-dark)
 
+(custom-set-faces! '(region :background "red"))
+
 ;; choose your fonts!
 (setq doom-font (font-spec :family "Bespoke Iosevka Mono" :size 20 :weight 'medium)
       doom-variable-pitch-font (font-spec :family "Overpass Nerd Font" :size 22 :weight 'medium)
