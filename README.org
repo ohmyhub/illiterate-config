@@ -13,10 +13,7 @@ I'm using this Doom configuration for my main Linux distro which is Manjaro Sway
 + ~config.org~
   - An org-mode file written in org markup that has blocks of emacs-lisp code embedded within it
   - This is the main configuration file that when tangled exports out to the ~config.el~ file
-
-+ ~config.el~
-  - This is the emacs-lisp configuration file that is created from ~config.org~
-  - This is the file that you would normally edit directly to configure Doom Emacs
+  - The ~config.el~ file is not in this repo. It has no information not found in ~config.org~
 
 + ~init.el~
   - This file comes pre-configured specific to Doom Emacs
@@ -42,7 +39,7 @@ I'm using this Doom configuration for my main Linux distro which is Manjaro Sway
   - In my case I used ~custom-set-faces~ instead of ~setq~ in my config a couple of times
 @@html:<br>@@
 + Other resources such as images are put in the ~misc~ subfolder
-@@html:<br>@@
+
 -----
 
 #+name: fig: Doom Dashboard
