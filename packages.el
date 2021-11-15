@@ -8,20 +8,8 @@
 (package! org-appear
   :recipe (:host github :repo "awth13/org-appear"))
 (package! org-real)
-
-
-;; childframes
-(package! vertico-posframe)
-
-;; tree sitter syntax support
-(package! tree-sitter)
-(package! tree-sitter-langs)
-
-;; add paths to consult
-(package! consult-dir)
-
-;; using svg images for tags
-(package! svg-lib)
+(package! boxy)
+(package! boxy-headings)
 
 ;;themes
 ;;
@@ -47,6 +35,22 @@
 
 ;; keep track of the cursor
 (package! beacon)
+
+;; childframes
+(package! vertico-posframe)
+
+;; tree sitter syntax support
+(package! tree-sitter)
+(package! tree-sitter-langs)
+
+;; add paths to consult
+(package! consult-dir)
+
+;; using svg images for tags
+(package! svg-lib)
+
+;; colorize color names in the buffer
+(package! rainbow-mode)
 
 ;; don't allow native compilation
 (package! with-editor :recipe (:build (:not native-compile)))
