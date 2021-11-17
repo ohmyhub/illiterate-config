@@ -279,7 +279,7 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 ;; choose your fonts!
 (setq doom-font (font-spec :family "Bespoke Iosevka Mono" :size 20 :weight 'medium)
       doom-variable-pitch-font (font-spec :family "Overpass Nerd Font" :size 22 :weight 'medium)
-      doom-unicode-font (font-spec :family "Unifont CSUR")
+      doom-unicode-font (font-spec :family "JuliaMono" :weight 'regular)
       doom-serif-font (font-spec :family "BlexMono Nerd Font" :weight 'light))
 #+end_src
 
