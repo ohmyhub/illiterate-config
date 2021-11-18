@@ -287,7 +287,7 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 + I enjoy a nice looking font. I'm also a fan of eye candy. So things like ligatures and code glyphs appeal to me. I customized and built my own version of Iosevka recently so that's what I'm using at the moment.
 #+begin_src emacs-lisp :tangle yes
 ;; choose your fonts!
-(setq doom-font (font-spec :family "Bespoke Iosevka" :size 20 :weight 'semibold)
+(setq doom-font (font-spec :family "Bespoke Iosevka Mono" :size 20 :weight 'semibold)
       doom-variable-pitch-font (font-spec :family "Overpass Nerd Font" :size 22 :weight 'medium)
       doom-unicode-font (font-spec :family "Noto Color Emoji" :weight 'regular)
       doom-serif-font (font-spec :family "BlexMono Nerd Font" :weight 'light))
