@@ -9,6 +9,7 @@ People like:
 + [[https://github.com/tecosaur/emacs-config/blob/master/config.org][@tecosaur]]
 + [[https://github.com/elken/.doom.d][@elken]]
 + [[https://github.com/zzamboni/dot-doom][@zzamboni]]
++ [[https://github.com/jeetelongname/dotfiles/blob/master/config/linked/doom/config.org][@jeetelongname]]
 and many others I'm sure I've forgotten about.
 Also, thank you Henrik Lissner for the time and effort you have spent developing the delightful Doom Emacs.
 I use primary use Emacs as a note taking platform for work and D&D campaigns.
@@ -200,6 +201,21 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 (defun org-open-config-file ()
   (interactive)
   (find-file "~/.doom.d/config.org"))
+#+end_src
+
++ A helper function that I stole from jeet to reload this file after it's tangled.
+#+begin_src emacs-lisp :tangle yes
+;; reload config file
+(defun kev/reload ()
+  "A simple command to make reloading my config easier."
+  (interactive)
+  (load! "config" doom-private-dir)
+  (message "Reloaded!"))
+#+end_src
+
+#+begin_src emacs-lisp :tangle yes
+(map! :leader
+      "h r c" #'kev/reload)
 #+end_src
 
 + Evaluate configuration and reload fonts.
