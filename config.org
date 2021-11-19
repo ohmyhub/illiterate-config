@@ -455,7 +455,7 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 (setq vertico-posframe-border-width 4)
 
 (custom-set-faces!
-  '(vertico-posframe-border :inherit default :background "#00212B"))
+  '(vertico-posframe-border :inherit default :background "#094959"))
 #+end_src
 
 *** Other
