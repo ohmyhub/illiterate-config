@@ -776,9 +776,10 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 (use-package! elcord
   :config
   (setq elcord-quiet t
-        elcord-refresh-rate 30
+        elcord-refresh-rate 15
         elcord-display-buffer-details 'nil
-        elcord-editor-icon "Doom")
+        elcord-use-major-mode-as-main-icon t
+        elcord-show-small-icon nil)
   (elcord-mode +1))
 #+end_src
 
