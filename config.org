@@ -336,6 +336,13 @@ What you are about to witness is a perpetual work in progress. It won't be prett
   (setq emojify-emoji-styles '(unicode)))
 #+end_src
 
+#+begin_src emacs-lisp :tangle yes
+(add-hook! 'after-init-hook #'global-emojify-mode)
+(add-hook! 'after-init-hook #'global-emojify-mode-line-mode)
+(setq emojify-company-tooltips-p t)
+(setq emojify-emoji-set "twemoji-v2-22")
+#+end_src
+
 + I want to be able to start typing and have a list of emojis pop up in a prompt for completion.
 #+begin_src emacs-lisp :tangle yes
 ;; emojis in my backend
