@@ -196,6 +196,15 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 *** Helpful Functions
++ I want to be able to insert an active timestamp with relative ease.
+#+begin_src emacs-lisp :tangle yes
+(defun kev/get-timestamp ()
+  "Calls org-time-stamp with 2 prefix arguments"
+  :repeat nil
+  (interactive)
+  (org-time-stamp '(16) t))
+#+end_src
+
 + Open the file that I'm currently writing this in.
 #+begin_src emacs-lisp :tangle yes
 (defun org-open-config-file ()
