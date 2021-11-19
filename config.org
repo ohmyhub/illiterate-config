@@ -318,7 +318,7 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 + I like emojis. There, I said it. I am specifying a different font to handle emojis.
 #+begin_src emacs-lisp :tangle yes
 ;; emojis
-(use-package emojify
+(use-package! emojify
   :config
   (when (member "Segoe UI Emoji" (font-family-list))
     (set-fontset-font
@@ -330,7 +330,8 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 + I want to be able to start typing and have a list of emojis pop up in a prompt for completion.
 #+begin_src emacs-lisp :tangle yes
 ;; emojis in my backend
-(setq company-backends '(company-emoji company-capf))
+(after! org
+  (set-company-backend! 'org-mode-hook '(company-emoji company-capf)))
 #+end_src
 
 + Mixing monospace and variable pitched fonts in org-mode gives you a visually impressive workspace. Once again I am swiping a bit of config from the impressive @tecosaur.
