@@ -389,6 +389,60 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
     '(misc-info minor-modes checker input-method buffer-encoding major-mode process vcs "  ")))
 #+end_src
 
++ I'm trying out a few more things in the modeline to see what I like.
+#+begin_src emacs-lisp :tangle yes
+(after! doom-modeline
+  (setq doom-modeline-icon 't
+        doom-modeline-env-version t
+        doom-modeline-buffer-modification-icon t
+        doom-modeline-enable-word-count t
+        doom-modeline-icon (display-graphic-p)
+        doom-modeline-persp-name t
+        doom-modeline-persp-icon t
+        doom-modeline-github t
+        doom))
+#+end_src
+
++ A custom modeline for pdf files stolen from jeet who stole it from teco.
+#+begin_src emacs-lisp :tangle yes
+(after! (pdf-tools doom-modeline)
+  (doom-modeline-def-segment pdf-icon
+    (concat
+     (doom-modeline-spc)
+     (doom-modeline-icon 'octicon "file-pdf" nil nil
+                         :face (if (doom-modeline--active)
+                                   'all-the-icons-red
+                                 'mode-line-inactive)
+                         :v-adjust 0.02)))
+
+  (doom-modeline-def-segment buffer-name
+    (concat
+     (doom-modeline-spc)
+     (doom-modeline--buffer-name)))
+
+  (defun doom-modeline-update-pdf-pages ()
+    "Update PDF pages."
+    (setq doom-modeline--pdf-pages
+          (concat " P"
+                  (number-to-string (eval `(pdf-view-current-page)))
+                  (propertize (concat "/" (number-to-string (pdf-cache-number-of-pages))) 'face 'doom-modeline-buffer-minor-mode))))
+
+  (doom-modeline-def-segment pdf-pages
+    "Display PDF pages."
+    (if (doom-modeline--active) doom-modeline--pdf-pages
+      (propertize doom-modeline--pdf-pages 'face 'mode-line-inactive)))
+
+  (doom-modeline-def-modeline 'pdf
+    '(bar window-number matches pdf-pages pdf-icon buffer-name)
+    '(misc-info major-mode process vcs))
+
+  (defun doom-set-pdf-modeline-h ()
+    "sets the pdf modeline"
+    (doom-modeline-set-modeline 'pdf))
+
+  (add-hook! 'pdf-view-mode-hook 'doom-set-pdf-modeline-h))
+#+end_src
+
 *** Childframes
 **** Vertico
 + I use ~vertico~ and the Doom Emacs affiliated modules/packages as my completion engine. I enjoyed having the option of ~ivy~ in a childframe instead of the minibuffer. This is someone's attempt at using a childframe for ~vertico~ that I'm tinkering with.
