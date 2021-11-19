@@ -401,7 +401,7 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
         doom-modeline-persp-name t
         doom-modeline-persp-icon t
         doom-modeline-github t
-        doom))
+        doom-modeline-mu4e t))
 #+end_src
 
 + A custom modeline for pdf files stolen from jeet who stole it from teco.
