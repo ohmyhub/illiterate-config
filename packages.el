@@ -10,6 +10,7 @@
 (package! org-real)
 (package! boxy)
 (package! boxy-headings)
+(package! company-org-block)
 
 ;;themes
 ;;
@@ -51,6 +52,12 @@
 
 ;; colorize color names in the buffer
 (package! rainbow-mode)
+
+;; Emacs in discord rich presence
+(package! elcord)
+
+;; svg prefix icons for completion backends
+(package! kind-icon)
 
 ;; don't allow native compilation
 (package! with-editor :recipe (:build (:not native-compile)))
