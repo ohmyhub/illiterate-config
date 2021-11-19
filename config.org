@@ -692,6 +692,17 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
         org-appear-autosubmarkers t))
 #+end_src
 
++ A little bit of configuration for the company-org-block package.
+#+begin_src emacs-lisp :tangle yes
+(use-package! company-org-block
+  :after org
+  :config
+  (setq company-org-block-edit-style 'auto))
+
+(after! org
+  (set-company-backend! 'org-mode-hook '(company-org-block company-capf)))
+#+end_src
+
 ** You've Got Mail
 *** mu4me?
 + Mu4e is an awesome way to manage your email. Or in my case a new and interesting way I /could/ check my email if I remembered to do it.
