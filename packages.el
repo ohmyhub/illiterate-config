@@ -59,6 +59,8 @@
 ;; svg prefix icons for completion backends
 (package! kind-icon)
 
+(package! powerthesaurus)
+
 ;; don't allow native compilation
 (package! with-editor :recipe (:build (:not native-compile)))
 (package! vterm :recipe (:build (:not native-compile)))
