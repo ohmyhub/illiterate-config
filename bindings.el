@@ -1,7 +1,7 @@
 ;;; ~/.doom.d/bindings.el -*- lexical-binding: t; -*-
 
 (map! :leader
-      (:prefix ("k" . "Custom")
+      (:prefix ("k" . "Grab bag")
        :desc "Switch Frame" :n                          "f"      #'select-frame-by-name
        :desc "Insert today's date" :n                   "t"      #'today
        :desc "Paste from clipboard" :n                  "p"      #'clipboard-yank
