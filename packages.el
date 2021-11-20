@@ -11,6 +11,10 @@
 (package! boxy)
 (package! boxy-headings)
 (package! company-org-block)
+(package! org-pandoc-import
+  :recipe (:host github
+           :repo "tecosaur/org-pandoc-import"
+           :files ("*.el" "filters" "preprocessors")))
 
 ;;themes
 ;;

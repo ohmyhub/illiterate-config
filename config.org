@@ -525,6 +525,11 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 (setq org-export-headline-levels 5)
 #+end_src
 
++ Thank you tecosaur for the wonderful [[https://github.com/tecosaur/org-pandoc-import][org-pandoc-import]] package. I want all the text in org-mode please.
+#+begin_src emacs-lisp :tangle yes
+(use-package! org-pandoc-import :after org)
+#+end_src
+
 *** Make It Pretty!
 + I use org-mode to create task lists. Having keywords I can assign to a heading helps with that.
 #+begin_src emacs-lisp :tangle yes
