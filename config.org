@@ -328,6 +328,7 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+begin_src emacs-lisp :tangle yes
 ;; emojis
 (use-package! emojify
+  :defer t
   :config
   (when (member "Segoe UI Emoji" (font-family-list))
     (set-fontset-font
