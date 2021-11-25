@@ -305,7 +305,11 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 
 + A small change so that the highlight selection isn't the same color as the org-babel background color.
 #+begin_src emacs-lisp :tangle yes
-(custom-set-faces! '(region :background "#2d3145"))
+(custom-set-faces!
+  '(region :background "#2d3145")
+  '(org-block :background "#373c56")
+  '(org-block-begin-line :background "#373c56" :foreground "#7d8098")
+  '(org-block-end-line :background "#373c56" :foreground "#7d8098"))
 #+end_src
 
 *** Fonts
