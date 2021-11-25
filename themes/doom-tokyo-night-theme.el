@@ -248,8 +248,8 @@
 
    ;;; org-mode
    (org-hide :foreground hidden)
-   (org-block :background #242636)
-   (org-block-begin-line :background #242636 :foreground comments)
+   (org-block :background base0)
+   (org-block-begin-line :background base0 :foreground comments)
    (solaire-org-hide-face :foreground hidden)
 
    ;;; web-mode
