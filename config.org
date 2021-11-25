@@ -297,15 +297,16 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 
 ** Lookin' Good
 *** Theme
-+ Everything solarized. Yes, even that.
++ I love Tokyo Night theme now. Solarized Dark is dead to me.
 #+begin_src emacs-lisp :tangle yes
 ;; solarized me
-(setq doom-theme 'doom-solarized-dark)
+(setq doom-theme 'doom-tokyo-night)
 #+end_src
 
++ This is going in the archive for now. I might need want this if I switch back to Solarized Dark.
 + A small change so that the highlight selection isn't the same color as the org-babel background color.
-#+begin_src emacs-lisp :tangle yes
-(custom-set-faces! '(region :background "#094959"))
+#+begin_src emacs-lisp :tangle no
+;;(custom-set-faces! '(region :background "#094959"))
 #+end_src
 
 *** Fonts
