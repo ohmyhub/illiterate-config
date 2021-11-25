@@ -6,12 +6,12 @@
   "Options for doom-themes"
   :group 'doom-themes)
 
-(defcustom doom-tokyo-night-brighter-modeline t
+(defcustom doom-tokyo-night-brighter-modeline nil
   "If non-nil, more vivid colors will be used to style the mode-line."
   :group 'doom-tokyo-night-theme
   :type 'boolean)
 
-(defcustom doom-tokyo-night-brighter-comments t
+(defcustom doom-tokyo-night-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
   :group 'doom-tokyo-night-theme
   :type 'boolean)
@@ -21,7 +21,7 @@
   :group 'doom-tokyo-night-theme
   :type 'boolean)
 
-(defcustom doom-tokyo-night-padded-modeline nil
+(defcustom doom-tokyo-night-padded-modeline t
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to determine the exact padding."
   :group 'doom-tokyo-night-theme
   :type '(or integer boolean))
@@ -248,8 +248,8 @@
 
    ;;; org-mode
    (org-hide :foreground hidden)
-   (org-block :background base0)
-   (org-block-begin-line :background base0 :foreground comments)
+   (org-block :background #242636)
+   (org-block-begin-line :background #242636 :foreground comments)
    (solaire-org-hide-face :foreground hidden)
 
    ;;; web-mode
