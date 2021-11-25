@@ -471,8 +471,13 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 
 (setq vertico-posframe-border-width 4)
 
+;; For Solarized Dark
+;;(custom-set-faces!
+;;  '(vertico-posframe-border :inherit default :background "#094959"))
+
+;; For Tokyo Night
 (custom-set-faces!
-  '(vertico-posframe-border :inherit default :background "#094959"))
+  '(vertico-posframe-border :inherit default :background "#242636"))
 #+end_src
 
 *** Other
