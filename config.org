@@ -196,6 +196,30 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 *** Helpful Functions
++ A helpful individual over on [[https://www.reddit.com/r/orgmode/comments/f63n53/is_there_an_easy_way_to_insert_an_image_link/fi46wpr/][reddit]] threw together this lovely function that helps insert image links with a caption in ~org-mode~.
+#+begin_src emacs-lisp :tangle yes
+;; My default image directory. It's literally the name of the variable.
+(setq my-default-image-directory "~/Dropbox/Org/linked-images/")
+
+;; Function to aid in inserting org-mode image links.
+(defun insert-image-org-link (img caption)
+  "Insert an org image link, choosing the file with completion
+and starting from `my-default-image-directory'. This prompts for
+an optional caption (leave it empty for no caption)."
+  (interactive
+   (list (read-file-name
+          "Image: " my-default-image-directory nil t nil
+          (lambda (name)
+            (or (directory-name-p name)
+                (member (file-name-extension name)
+                        image-file-name-extensions))))
+         (read-string "Caption: ")))
+  (insert
+   (if (string-empty-p caption)
+       (format "[[%s]]" img)
+     (format "#+caption: %s\n[[%s]]" caption img))))
+#+end_src
+
 + I want to be able to insert an active timestamp with relative ease.
 #+begin_src emacs-lisp :tangle yes
 (defun kev/get-timestamp ()
