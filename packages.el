@@ -11,6 +11,7 @@
 (package! boxy)
 (package! boxy-headings)
 (package! company-org-block)
+(package! writeroom-mode)
 (package! org-pandoc-import
   :recipe (:host github
            :repo "tecosaur/org-pandoc-import"
