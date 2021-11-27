@@ -18,12 +18,6 @@
 
 ;;themes
 ;;
-;; bespoke theme
-(package! bespoke-themes
-  :recipe (:host github :repo "mclear-tools/bespoke-themes"))
-(package! bespoke-modeline
-  :recipe (:host github :repo "mclear-tools/bespoke-modeline"))
-
 ;; ancient dark one
 (package! ancient-one-dark-theme)
 
