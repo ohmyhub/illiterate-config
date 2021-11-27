@@ -58,6 +58,7 @@
 ;; svg prefix icons for completion backends
 (package! kind-icon)
 
+;; This is a satisfactory package
 (package! powerthesaurus)
 
 ;; don't allow native compilation
