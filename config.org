@@ -836,6 +836,13 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
   (elcord-mode +1))
 #+end_src
 
+*** WriteRoom Mode
++ I've seen some beautiful org-mode buffers and more often than not the author has used writeroom-mode to configure it.
+#+begin_src emacs-lisp :tangle yes
+(after! writeroom-mode
+  (setq writeroom-width 160))
+#+end_src
+
 ** What's Computer Programming?
 *** Common Lisp
 + I'm trying to learn more about elisp's big brother /common-lisp/.
