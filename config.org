@@ -341,7 +341,7 @@ an optional caption (leave it empty for no caption)."
 #+begin_src emacs-lisp :tangle yes
 ;; choose your fonts!
 (setq doom-font (font-spec :family "Bespoke Iosevka Mono" :size 20 :weight 'semibold)
-      doom-variable-pitch-font (font-spec :family "Overpass Nerd Font" :size 22 :weight 'medium)
+      doom-variable-pitch-font (font-spec :family "Iosevka Aile" :size 22 :weight 'medium)
       doom-unicode-font (font-spec :family "Noto Color Emoji" :weight 'regular)
       doom-serif-font (font-spec :family "BlexMono Nerd Font" :weight 'light))
 (after! doom-themes
@@ -614,7 +614,7 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 + A couple of things are going on in this next bit. I think the downward facing triangle looks nice than the ellipses for folded org trees. Also, I don't need to see those stars before my pretty bullets. Also the second, it helps to prioritize tasks and it is nice to make those priorities pop visually.
 #+begin_src emacs-lisp :tangle yes
 ;; more fancy please
-(setq org-ellipsis " ∵ "
+(setq org-ellipsis " ⮟ "
       org-hide-leading-stars t
       org-priority-highest ?A
       org-priority-lowest ?E
@@ -639,7 +639,7 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
               :ellipses      "…"
               :arrow_right   "→"
               :arrow_left    "←"
-              :title         "Ｔ"
+              :title         "𝗧"
               :subtitle      "ʈ"
               :author        "α"
               :date          "δ"
