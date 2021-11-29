@@ -376,7 +376,8 @@ an optional caption (leave it empty for no caption)."
 #+begin_src emacs-lisp :tangle yes
 ;; emojis in my backend
 (after! org
-  (set-company-backend! 'org-mode-hook '(company-emoji company-capf)))
+  (set-company-backend! 'org-mode-hook '(company-emoji company-capf))
+  (add-hook 'org-mode-hook #'company-emoji-init))
 #+end_src
 
 + Mixing monospace and variable pitched fonts in org-mode gives you a visually impressive workspace. Once again I am swiping a bit of config from the impressive @tecosaur.
@@ -845,7 +846,7 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 ;; Be kind to each other, and be kind to your completion UI.
 (use-package! kind-icon
   :config
-  (add-hook! 'vertico-mode-hook
+  (add-hook 'vertico-mode-hook
              (lambda ()
                (setq completion-in-region-function
                      (kind-icon-enhance-completion
