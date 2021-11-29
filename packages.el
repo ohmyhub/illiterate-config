@@ -55,9 +55,6 @@
 ;; Emacs in discord rich presence
 (package! elcord)
 
-;; svg prefix icons for completion backends
-(package! kind-icon)
-
 ;; This is a satisfactory package
 (package! powerthesaurus)
 
