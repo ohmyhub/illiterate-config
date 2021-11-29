@@ -839,6 +839,19 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
   (setq writeroom-width 160))
 #+end_src
 
+*** Kind Icons
++ A lovely package that adds configurable svg icons to your completion backend.
+#+begin_src emacs-lisp :tangle yes
+;; Be kind to each other, and be kind to your completion UI.
+(use-package! kind-icon
+  :config
+  (add-hook! 'vertico-mode-hook
+             (lambda ()
+               (setq completion-in-region-function
+                     (kind-icon-enhance-completion
+                      completion-in-region-function)))))
+#+end_src
+
 ** What's Computer Programming?
 *** Common Lisp
 + I'm trying to learn more about elisp's big brother /common-lisp/.
