@@ -607,14 +607,14 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+begin_src emacs-lisp :tangle yes
 ;; you're a superstar!
 (after! org-superstar
-  (setq org-superstar-headline-bullets-list '("◉" "○" "✸" "✿" "✤" "✜" "◆" "▶")
+  (setq org-superstar-headline-bullets-list '("◉" "○" "✸" "⎔" "◆" "✜" "✤" "▶")
         org-superstar-prettify-item-bullets t ))
 #+end_src
 
 + A couple of things are going on in this next bit. I think the downward facing triangle looks nice than the ellipses for folded org trees. Also, I don't need to see those stars before my pretty bullets. Also the second, it helps to prioritize tasks and it is nice to make those priorities pop visually.
 #+begin_src emacs-lisp :tangle yes
 ;; more fancy please
-(setq org-ellipsis " ▾ "
+(setq org-ellipsis " ∵ "
       org-hide-leading-stars t
       org-priority-highest ?A
       org-priority-lowest ?E
@@ -632,14 +632,14 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 (after! org
   (appendq! +ligatures-extra-symbols
             `(:checkbox      ""
-              :pending       "◼"
+              :pending       "🔲"
               :checkedbox    "☑"
               :list_property "∷"
               :em_dash       "—"
               :ellipses      "…"
               :arrow_right   "→"
               :arrow_left    "←"
-              :title         "τ"
+              :title         "Ｔ"
               :subtitle      "ʈ"
               :author        "α"
               :date          "δ"
