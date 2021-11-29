@@ -323,7 +323,7 @@ an optional caption (leave it empty for no caption)."
 *** Theme
 + I love Tokyo Night theme now. Solarized Dark is dead to me.
 #+begin_src emacs-lisp :tangle yes
-;; solarized me
+;; I am the night! The Tokyo night. When it's dark.
 (setq doom-theme 'doom-tokyo-night)
 #+end_src
 
@@ -497,10 +497,6 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 (vertico-posframe-mode 1)
 
 (setq vertico-posframe-border-width 4)
-
-;; For Solarized Dark
-;;(custom-set-faces!
-;;  '(vertico-posframe-border :inherit default :background "#094959"))
 
 ;; For Tokyo Night
 (custom-set-faces!
