@@ -62,6 +62,10 @@
 (package! sly-quicklisp
   :recipe (:host github :repo "joaotavora/sly-quicklisp"))
 
+;; nxyt and Emacs sitting in a tree
+(package! emacs-with-nyxt
+  :recipe (:host github :repo "ag91/emacs-with-nyxt"))
+
 ;; don't allow native compilation
 (package! with-editor :recipe (:build (:not native-compile)))
 (package! vterm :recipe (:build (:not native-compile)))
