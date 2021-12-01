@@ -58,6 +58,10 @@
 ;; This is a satisfactory package
 (package! powerthesaurus)
 
+;; quicklisp support for sly
+(package! sly-quicklisp
+  :recipe (:host github :repo "joaotavora/sly-quicklisp"))
+
 ;; don't allow native compilation
 (package! with-editor :recipe (:build (:not native-compile)))
 (package! vterm :recipe (:build (:not native-compile)))
