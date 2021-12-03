@@ -839,6 +839,36 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
   (setq writeroom-width 160))
 #+end_src
 
+*** Grip Mode
++ Github-flavored Markdown/Org preview using [[https://github.com/joeyespo/grip][Grip]]
+#+begin_src emacs-lisp :tangle yes
+;; Path to the grip binary
+(setq grip-binary-path "/home/kevin/.local/bin/grip")
+
+;; You can use this variable to define another browser
+;; to use when loading previews. By default this value is `nil`
+;; meaning use default browser defined by your system
+(setq grip-url-browser "/usr/bin/firefox-nightly")
+
+;; A GitHub username for API authentication
+;;(setq grip-github-user "")
+
+;; A GitHub password or auth token for API auth
+;;(setq grip-github-password "")
+
+;; When nil, update the preview after file saves only, instead of also
+;; after every text change
+(setq grip-update-after-change nil)
+
+;; Preview hostname
+(setq grip-preview-host "localhost")
+
+;; Use embedded webkit to previe
+;; This requires GNU/Emacs version >= 26 and built with the `--with-xwidgets`
+;; option.
+;;(setq grip-preview-use-webkit t)
+#+end_src
+
 ** What's Computer Programming?
 *** Common Lisp
 + I'm trying to learn more about elisp's big brother /common-lisp/.
