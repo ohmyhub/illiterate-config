@@ -848,7 +848,7 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 ;; You can use this variable to define another browser
 ;; to use when loading previews. By default this value is `nil`
 ;; meaning use default browser defined by your system
-(setq grip-url-browser "/usr/bin/firefox-nightly")
+;;(setq grip-url-browser "/usr/bin/firefox-nightly")
 
 ;; A GitHub username for API authentication
 ;;(setq grip-github-user "")
@@ -866,7 +866,7 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 ;; Use embedded webkit to previe
 ;; This requires GNU/Emacs version >= 26 and built with the `--with-xwidgets`
 ;; option.
-;;(setq grip-preview-use-webkit t)
+(setq grip-preview-use-webkit t)
 #+end_src
 
 ** What's Computer Programming?
