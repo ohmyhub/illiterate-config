@@ -175,7 +175,10 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 + Prompt me for completion harder daddy.
 #+begin_src emacs-lisp :tangle yes
 ;; I like prompt prompts
-(setq company-idle-delay 0.01)
+(setq company-minimum-prefix-length 1)
+(setq company-idle-delay 0.0)
+(setq company-tooltip-align-annotations t)
+(setq company-selection-wrap-around t)
 #+end_src
 
 + This fixes an issue with vterm and native-compilation.
