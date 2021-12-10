@@ -85,6 +85,7 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+begin_src emacs-lisp :tangle yes
 ;; what time is it?
 (display-time-mode 1)
+(setq display-time-load-average nil)
 #+end_src
 
 + Without ~which-key~ I'd still be stuck in that first scratch buffer. It can get a little clogged with the word /evil/ when you use /evil-mode/ so let's filter that stuff out.
