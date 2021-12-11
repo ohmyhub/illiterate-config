@@ -652,9 +652,9 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
               :end           "∎"
               :log           "⬓"
               :email         "📧"
-              :priority_a   ,(propertize "⚑" 'face 'all-the-icons-red)
-              :priority_b   ,(propertize "⬆" 'face 'all-the-icons-orange)
-              :priority_c   ,(propertize "■" 'face 'all-the-icons-yellow)
+              :priority_a   ,(propertize "❗" 'face 'all-the-icons-red)
+              :priority_b   ,(propertize "⚑" 'face 'all-the-icons-orange)
+              :priority_c   ,(propertize "🛆" 'face 'all-the-icons-yellow)
               :priority_d   ,(propertize "⬇" 'face 'all-the-icons-green)
               :priority_e   ,(propertize "❓" 'face 'all-the-icons-blue)))
   (set-ligatures! 'org-mode
