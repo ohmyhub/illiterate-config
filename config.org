@@ -274,16 +274,6 @@ an optional caption (leave it empty for no caption)."
   (insert (format-time-string "%Y-%m-%d, %A")))
 #+end_src
 
-+ This bad boy selects the entire line and places your cursor at the end of it. I didn't know that there was an existing function for that at the time. I'll keep this around for now.
-#+begin_src emacs-lisp :tangle yes
-;; this is terrible
-(defun select-line ()
-  "select from point to end of line"
-  (interactive)
-  (evil-visual-state)
-  (end-of-line))
-#+end_src
-
 + A handy function I stole from @tecosaur to create a new org-mode buffer.
 #+begin_src emacs-lisp :tangle yes
 ;; create new empty org-mode buffer
