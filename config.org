@@ -402,17 +402,6 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+end_src
 
 *** Modeline
-+ Some of the information displayed by default in the modeline is superfluous and so I snip it right out of there.
-#+begin_src emacs-lisp :tangle yes
-;; I don't need to see this
-(defun doom-modeline-conditional-buffer-encoding ()
-  (setq-local doom-modeline-buffer-encoding
-              (unless (or (eq buffer-file-coding-system 'utf-8-unix)
-                          (eq buffer-file-coding-system 'utf-8)))))
-
-  (add-hook 'after-change-major-mode-hook #'doom-modeline-conditional-buffer-encoding)
-#+end_src
-
 + When I see text in red I assume something has gone wrong. The default in Doom is to show a the filename in red when there are unsaved changes. Let's go with a slightly less alarming orange.
 #+begin_src emacs-lisp :tangle yes
 ;; red is too aggressive, so let's make it orange
