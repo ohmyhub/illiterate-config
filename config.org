@@ -346,6 +346,20 @@ an optional caption (leave it empty for no caption)."
   '(font-lock-keyword-face :slant italic))
 #+end_src
 
++ The vterm package doesn't display the glyph I use for my prompt character. So I decided to switch the font for vterm specifically to see if that works.
+#+begin_src emacs-lisp :tangle yes
+(after! vterm
+  (setq vterm-shell "/usr/bin/fish"))
+(defun vterm-font-face ()
+  (interactive)
+  (setq buffer-face-mode-face
+        '(:family "Bespoke Iosevka Mono" :height 150))
+  (buffer-face-mode))
+
+(add-hook! 'vterm-mode-hook (vterm-font-face))
+#+end_src
++ I couldn't get this to work but I'm going to keep it around because I like it and I might come back to it.
+
 + I like emojis. There, I said it. I am specifying a different font to handle emojis.
 #+begin_src emacs-lisp :tangle yes
 ;; emojis
