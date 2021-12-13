@@ -11,4 +11,5 @@
        :desc "Paste from clipboard" :n                  "p"      #'clipboard-yank
        :desc "Ranger in emacs" :n                       "r"      #'ranger
        :desc "Insert today's date" :n                   "t"      #'today
+       :desc "Copy region into kill ring" :n            "c"      #'copy-region-as-kill
        :desc "Evaluate buffer and reload fonts" :n      "v"      #'evig))
