@@ -491,14 +491,11 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 + I use ~vertico~ and the Doom Emacs affiliated modules/packages as my completion engine. I enjoyed having the option of ~ivy~ in a childframe instead of the minibuffer. This is someone's attempt at using a childframe for ~vertico~ that I'm tinkering with.
 #+begin_src emacs-lisp :tangle yes
 ;; children of vertico
-(require 'vertico-posframe)
-(vertico-posframe-mode 1)
-
-(setq vertico-posframe-border-width 4)
-
-;; For Tokyo Night
-(custom-set-faces!
-  '(vertico-posframe-border :inherit default :background "#242636"))
+(after! persp-mode
+  (vertico-posframe-mode t)
+  (setq vertico-posframe-border-width 4)
+  (custom-set-faces!
+    '(vertico-posframe-border :inherit default :background "#242636")))
 #+end_src
 
 *** Other
