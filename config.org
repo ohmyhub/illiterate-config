@@ -318,7 +318,7 @@ an optional caption (leave it empty for no caption)."
 + I love Tokyo Night theme now. Solarized Dark is dead to me.
 #+begin_src emacs-lisp :tangle yes
 ;; I am the night! The Tokyo night. When it's dark.
-(setq doom-theme 'doom-tokyo-night)
+(setq doom-theme 'my-tokyo-night)
 #+end_src
 
 + A small change so that the highlight selection isn't the same color as the org-babel background color.
