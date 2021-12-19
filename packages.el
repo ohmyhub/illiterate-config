@@ -66,6 +66,9 @@
 (package! emacs-with-nyxt
   :recipe (:host github :repo "ag91/emacs-with-nyxt"))
 
+;; vterm fixed branch
+(package! :recipe (:host github :repo "blahgeek/emacs-libvterm" :branch "fix-visibility"))
+
 ;; don't allow native compilation
 (package! with-editor :recipe (:build (:not native-compile)))
 ;;(package! vterm :recipe (:build (:not native-compile)))
