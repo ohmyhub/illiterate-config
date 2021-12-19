@@ -68,5 +68,5 @@
 
 ;; don't allow native compilation
 (package! with-editor :recipe (:build (:not native-compile)))
-(package! vterm :recipe (:build (:not native-compile)))
+;;(package! vterm :recipe (:build (:not native-compile)))
 (package! evil-collection :recipe (:build (:not native-compile)))

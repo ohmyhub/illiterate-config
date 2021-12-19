@@ -183,9 +183,9 @@ What you are about to witness is a perpetual work in progress. It won't be prett
 #+end_src
 
 + This fixes an issue with vterm and native-compilation.
-#+begin_src emacs-lisp :tangle yes
+#+begin_src emacs-lisp :tangle no
 ;; supposedly this helps native-comp and vterm play well together
-(setq vterm-always-compile-module t)
+;;(setq vterm-always-compile-module t)
 #+end_src
 
 + How should org-mode open specific file types? I'll keep everything default but open pdfs in an external program. In this case I'll use the system default.
@@ -347,16 +347,16 @@ an optional caption (leave it empty for no caption)."
 #+end_src
 
 + The vterm package doesn't display the glyph I use for my prompt character. So I decided to switch the font for vterm specifically to see if that works.
-#+begin_src emacs-lisp :tangle yes
-(after! vterm
-  (setq vterm-shell "/usr/bin/fish"))
-(defun vterm-font-face ()
-  (interactive)
-  (setq buffer-face-mode-face
-        '(:family "Bespoke Iosevka Mono" :height 150))
-  (buffer-face-mode))
+#+begin_src emacs-lisp :tangle no
+;;(after! vterm
+;;  (setq vterm-shell "/usr/bin/fish"))
+;;(defun vterm-font-face ()
+;;  (interactive)
+;;  (setq buffer-face-mode-face
+;;        '(:family "Bespoke Iosevka Mono" :height 150))
+;;  (buffer-face-mode))
 
-(add-hook! 'vterm-mode-hook (vterm-font-face))
+;;(add-hook! 'vterm-mode-hook (vterm-font-face))
 #+end_src
 + I couldn't get this to work but I'm going to keep it around because I like it and I might come back to it.
 
