@@ -72,6 +72,9 @@
    :repo "blahgeek/emacs-libvterm"
    :branch "fix-visibility"))
 
+(package! tridactyl-mode
+  :recipe (:host github :repo "Fuco1/tridactyl-mode"))
+
 ;; don't allow native compilation
 ;;(package! with-editor :recipe (:build (:not native-compile)))
 ;;(package! vterm :recipe (:build (:not native-compile)))
