@@ -72,8 +72,12 @@
    :repo "blahgeek/emacs-libvterm"
    :branch "fix-visibility"))
 
+;; tridactyl is a firefox extension that provides vim-like keyboard navigation
 (package! tridactyl-mode
   :recipe (:host github :repo "Fuco1/tridactyl-mode"))
+
+;; fix for annoying package error
+(unpin! dired-git-info)
 
 ;; don't allow native compilation
 ;;(package! with-editor :recipe (:build (:not native-compile)))
