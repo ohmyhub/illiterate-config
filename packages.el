@@ -21,6 +21,7 @@
 ;;
 ;; ancient dark one
 (package! ancient-one-dark-theme)
+(unpin! doom-themes)
 
 ;; all other
 ;;
