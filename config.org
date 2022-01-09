@@ -325,7 +325,7 @@ an optional caption (leave it empty for no caption)."
 #+begin_src emacs-lisp :tangle yes
 (custom-set-faces!
   ;;'(region :background "#2d3145")
-  '(org-block :background "#373c56")
+  '(org-block :background "#373c56"))
   ;;'(org-block-begin-line :background "#373c56" :foreground "#7d8098")
   ;;'(org-block-end-line :background "#373c56" :foreground "#7d8098"))
 #+end_src
