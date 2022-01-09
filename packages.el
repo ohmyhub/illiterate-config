@@ -67,11 +67,8 @@
 (package! emacs-with-nyxt
   :recipe (:host github :repo "ag91/emacs-with-nyxt"))
 
-;; vterm fixed branch
-(package! vterm :recipe
-  (:host github
-   :repo "blahgeek/emacs-libvterm"
-   :branch "fix-visibility"))
+;; keep that vterm fresh
+(unpin! vterm)
 
 ;; tridactyl is a firefox extension that provides vim-like keyboard navigation
 (package! tridactyl-mode
