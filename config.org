@@ -602,7 +602,7 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
 #+begin_src emacs-lisp :tangle yes
 ;; you're a superstar!
 (after! org-superstar
-  (setq org-superstar-headline-bullets-list '("◉" "○" "✸" "⎔" "◆" "✜" "✤" "▶")
+  (setq org-superstar-headline-bullets-list '("◉" "○" "✸" "▪" "◆" "✜" "✤" "▶")
         org-superstar-prettify-item-bullets t ))
 #+end_src
 
