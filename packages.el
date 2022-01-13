@@ -28,9 +28,6 @@
 ;; emojis in completion
 (package! company-emoji)
 
-;; web bookmark manager
-(package! ebuku)
-
 ;; making music
 (package! alda-mode)
 
