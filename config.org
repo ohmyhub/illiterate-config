@@ -827,6 +827,13 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
   (setq writeroom-width 160))
 #+end_src
 
+*** The factory tint settings are always way too high
++ I'm trying out a couple of tweaks to display settings
+#+begin_src emacs-lisp :tangle yes
+(setq display-pixels-per-inch 109.0)
+(setq window-resize-pixelwise t)
+#+end_src
+
 ** What's Computer Programming?
 *** Common Lisp
 + I'm trying to learn more about elisp's big brother /common-lisp/.
