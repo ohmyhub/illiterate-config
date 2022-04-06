@@ -749,6 +749,19 @@ Also immediately enables `mixed-pitch-modes' if currently in one of the modes."
   (set-company-backend! 'org-mode-hook '(company-org-block company-capf)))
 #+end_src
 
++ Wherever I may roam...
+#+begin_src emacs-lisp :tangle yes
+;; When in roam...
+(setq org-roam-directory "~/Dropbox/Roam/")
+(setq org-roam-dailies-directory "daily/")
+
+(setq org-roam-dailies-capture-templates
+      '(("d" "default" entry
+         "* %?"
+         :target (file+head "%<%Y-%m-%d>.org"
+                            "#+title: %<%Y-%m-%d>\n"))))
+#+end_src
+
 ** You've Got Mail
 *** mu4me?
 + Mu4e is an awesome way to manage your email. Or in my case a new and interesting way I /could/ check my email if I remembered to do it.
